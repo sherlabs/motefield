@@ -1,17 +1,48 @@
 {
-  "name": "gather-studio",
+  "name": "motefield",
   "version": "0.1.0",
+  "description": "Turn pictures into living particle fields. Export loops for the web.",
   "private": true,
+  "license": "MIT",
+  "keywords": [
+    "particles",
+    "point-cloud",
+    "webgl2",
+    "depth-estimation",
+    "background-removal",
+    "video-export",
+    "webcodecs",
+    "nextjs",
+    "generative"
+  ],
+  "homepage": "https://github.com/sherlabs/motefield#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherlabs/motefield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sherlabs/motefield/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "node scripts/copy-ort.mjs",
+    "predev": "node scripts/copy-ort.mjs",
+    "prebuild": "node scripts/copy-ort.mjs"
   },
   "dependencies": {
+    "mp4-muxer": "^5.2.2",
     "next": "16.4.3",
+    "onnxruntime-web": "1.17.3",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "webm-muxer": "^5.1.4"
   },
   "devDependencies": {
     "@types/node": "^20",
